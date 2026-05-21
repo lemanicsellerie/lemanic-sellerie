@@ -979,26 +979,26 @@
       <div class="form-row">
         <div class="form-group">
           <label>Prénom</label>
-          <input type="text" placeholder="Jean" required>
+          <input type="text" name="prenom" placeholder="Jean" required>
         </div>
         <div class="form-group">
           <label>Nom</label>
-          <input type="text" placeholder="Dupont" required>
+          <input type="text" name="nom" placeholder="Dupont" required>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label>Téléphone</label>
-          <input type="tel" placeholder="+33 6 00 00 00 00">
+          <input type="tel" name="telephone" placeholder="+33 6 00 00 00 00">
         </div>
         <div class="form-group">
           <label>Email</label>
-          <input type="email" placeholder="jean@exemple.fr" required>
+          <input type="email" name="email" placeholder="jean@exemple.fr" required>
         </div>
       </div>
       <div class="form-group">
         <label>Type de prestation</label>
-        <select>
+        <select name="prestation">
           <option value="">Sélectionner...</option>
           <option>Taud de bateau</option>
           <option>Capote de voilier</option>
@@ -1011,7 +1011,7 @@
       </div>
       <div class="form-group">
         <label>Votre message</label>
-        <textarea placeholder="Décrivez votre projet, le type de bateau / véhicule, les dimensions approximatives..."></textarea>
+        <textarea name="message" placeholder="Décrivez votre projet, le type de bateau / véhicule, les dimensions approximatives..."></textarea>
       </div>
       <button type="submit" class="form-submit">Envoyer ma demande</button>
     </form>
