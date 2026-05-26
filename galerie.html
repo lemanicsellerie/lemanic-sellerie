@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Réalisations – Lémanic Sellerie | Galerie de travaux</title>
+<link rel="canonical" href="https://lemanic-sellerie.vercel.app/galerie.html">
+<meta name="description" content="Découvrez les réalisations de Lémanic Sellerie : tauds de bateau, capotes de voilier, sellerie marine, bâches de camion et stores. Photos de nos travaux sur le Lac Léman.">
+<meta property="og:title" content="Réalisations – Lémanic Sellerie">
+<meta property="og:description" content="Photos de nos réalisations : tauds, capotes, sellerie marine et bâches. Artisan sellier à Douvaine, Haute-Savoie.">
+<meta property="og:url" content="https://lemanic-sellerie.vercel.app/galerie.html">
+<meta property="og:image" content="https://res.cloudinary.com/dfodljfu4/image/upload/q_auto/f_auto/v1779355820/8387_jptt5i.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2744; --navy-light: #243358;
+    --gold: #c9a96e; --gold-light: #e2c99a;
+    --cream: #faf7f2; --cream-dark: #f0ebe1;
+    --text: #2a2a2a; --text-light: #666;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: rgba(26,39,68,.96); backdrop-filter: blur(8px); }
+  .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .nav-logo svg { width: 38px; height: 38px; }
+  .nav-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; color: var(--cream); letter-spacing: .12em; line-height: 1.2; }
+  .nav-logo-text span { display: block; font-size: .72rem; color: var(--gold); letter-spacing: .22em; font-style: italic; font-weight: 300; }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a { color: rgba(250,247,242,.75); text-decoration: none; font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+  .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 9px 22px !important; font-weight: 500 !important; }
+
+  .page-hero { background: var(--navy); padding: 160px 48px 80px; text-align: center; }
+  .page-hero p { font-size: .72rem; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; color: var(--cream); }
+  .page-hero h1 em { font-style: italic; color: var(--gold-light); }
+
+  .gallery-section { padding: 80px 48px; }
+
+  .gallery-intro { max-width: 700px; margin: 0 auto 48px; text-align: center; }
+  .gallery-intro p { color: var(--text-light); line-height: 1.8; font-weight: 300; }
+  .gallery-intro a { color: var(--gold); }
+
+  .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 40px; }
+  .filter-btn { padding: 8px 20px; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; border: 1px solid rgba(26,39,68,.2); background: transparent; color: var(--text-light); cursor: pointer; transition: all .2s; font-family: 'Jost', sans-serif; }
+  .filter-btn.active, .filter-btn:hover { background: var(--navy); border-color: var(--navy); color: var(--cream); }
+
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
+  .gallery-item { aspect-ratio: 1; overflow: hidden; position: relative; cursor: pointer; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s, filter .3s; filter: saturate(.85); }
+  .gallery-item:hover img { transform: scale(1.07); filter: saturate(1.1); }
+  .gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,39,68,.8) 0%, transparent 50%); opacity: 0; transition: opacity .3s; display: flex; align-items: flex-end; padding: 20px; }
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+  .gallery-label { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--cream); font-style: italic; }
+  .gallery-item.wide { grid-column: span 2; }
+
+  .lightbox { display: none; position: fixed; inset: 0; background: rgba(10,14,26,.95); z-index: 1000; align-items: center; justify-content: center; }
+  .lightbox.active { display: flex; }
+  .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
+  .lightbox-close { position: absolute; top: 24px; right: 32px; color: var(--cream); font-size: 2rem; cursor: pointer; background: none; border: none; opacity: .7; transition: opacity .2s; }
+  .lightbox-close:hover { opacity: 1; }
+
+  .cta-section { background: var(--navy); padding: 80px 48px; text-align: center; }
+  .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; color: var(--cream); margin-bottom: 16px; }
+  .cta-section p { color: rgba(250,247,242,.6); margin-bottom: 32px; font-weight: 300; }
+  .btn-gold { background: var(--gold); color: var(--navy); padding: 14px 36px; font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; text-decoration: none; font-weight: 500; display: inline-block; transition: background .2s; }
+  .btn-gold:hover { background: var(--gold-light); }
+
+  footer { background: var(--navy); padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; color: var(--cream); }
+  .footer-logo span { color: var(--gold); }
+  .footer-links { display: flex; gap: 24px; list-style: none; }
+  .footer-links a { color: rgba(250,247,242,.45); text-decoration: none; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; transition: color .2s; }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy { font-size: .7rem; color: rgba(250,247,242,.3); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; } .nav-links { display: none; }
+    .page-hero { padding: 120px 24px 60px; }
+    .gallery-section { padding: 48px 24px; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-item.wide { grid-column: span 1; }
+    footer { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <svg viewBox="0 0 60 60" fill="none"><path d="M10 38 Q20 28 30 32 Q40 36 50 22" stroke="#c9a96e" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M48 18 L52 26 L44 24 Z" fill="#c9a96e"/><circle cx="32" cy="31" r="1.5" fill="#c9a96e"/></svg>
+    <div class="nav-logo-text">Lémanic Sellerie<span>Artisan sellier · Douvaine</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="galerie.html" class="active">Réalisations</a></li>
+    <li><a href="contact.html" class="nav-cta">Devis gratuit</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <p>Notre travail</p>
+  <h1>Nos <em>réalisations</em></h1>
+</div>
+
+<div class="gallery-section">
+  <div class="gallery-intro">
+    <p>Chaque projet est unique. Découvrez une sélection de nos travaux réalisés sur le <a href="https://fr.wikipedia.org/wiki/Lac_L%C3%A9man" target="_blank" rel="noopener">lac Léman</a> et en région franco-suisse. Pour un projet similaire, consultez nos <a href="services.html">services</a> ou <a href="contact.html">demandez un devis</a>.</p>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterGallery('all',this)">Tout</button>
+    <button class="filter-btn" onclick="filterGallery('taud',this)">Tauds</button>
+    <button class="filter-btn" onclick="filterGallery('capote',this)">Capotes</button>
+    <button class="filter-btn" onclick="filterGallery('sellerie',this)">Sellerie</button>
+    <button class="filter-btn" onclick="filterGallery('bache',this)">Bâches</button>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="gallery-item wide" data-cat="sellerie" onclick="openLightbox(this)">
+      <img src="https://res.cloudinary.com/dfodljfu4/image/upload/q_auto/f_auto/v1779355820/5400_iydcdm.jpg" alt="Sellerie sur mesure Fountain - coussins blanc et rouge">
+      <div class="gallery-overlay"><span class="gallery-label">Sellerie Fountain sur mesure</span></div>
+    </div>
+    <div class="gallery-item" data-cat="capote" onclick="openLightbox(this)">
+      <img src="https://res.cloudinary.com/dfodljfu4/image/upload/q_auto/f_auto/v1779355820/8387_jptt5i.jpg" alt="Capote de voilier grise sur mesure">
+      <div class="gallery-overlay"><span class="gallery-label">Capote voilier grise</span></div>
+    </div>
+    <div class="gallery-item" data-cat="capote" onclick="openLightbox(this)">
+      <img src="https://res.cloudinary.com/dfodljfu4/image/upload/q_auto/f_auto/v1779355820/8416_yifhbi.jpg" alt="Capote bordeaux voilier lac Léman">
+      <div class="gallery-overlay"><span class="gallery-label">Capote bordeaux voilier</span></div>
+    </div>
+    <div class="gallery-item" data-cat="taud" onclick="openLightbox(this)">
+      <img src="https://res.cloudinary.com/dfodljfu4/image/upload/q_auto/f_auto/v1779355820/IMG_2084_gjckol.jpg" alt="Taud d'hiver bordeaux sur voilier au port">
+      <div class="gallery-overlay"><span class="gallery-label">Taud d'hiver bordeaux</span></div>
+    </div>
+    <div class="gallery-item" data-cat="taud" onclick="openLightbox(this)">
+      <img src="https://res.cloudinary.com/dfodljfu4/image/upload/q_auto/f_auto/v1779355820/IMG_2288_anruya.jpg" alt="Taud beige bateau sur remorque">
+      <div class="gallery-overlay"><span class="gallery-label">Taud beige sur remorque</span></div>
+    </div>
+    <div class="gallery-item" data-cat="taud" onclick="openLightbox(this)">
+      <img src="https://res.cloudinary.com/dfodljfu4/image/upload/q_auto/f_auto/v1779355820/IMG_2347_tsrlc5.jpg" alt="Taud beige voilier lac Léman port">
+      <div class="gallery-overlay"><span class="gallery-label">Taud beige – Lac Léman</span></div>
+    </div>
+    <div class="gallery-item" data-cat="sellerie" onclick="openLightbox(this)">
+      <img src="https://res.cloudinary.com/dfodljfu4/image/upload/q_auto/f_auto/v1779355820/cd01fb49-1fea-47ca-a95e-fc43e4bdbb4c_cpc65y.jpg" alt="Coussins extérieur gris sur terrasse">
+      <div class="gallery-overlay"><span class="gallery-label">Coussins extérieur</span></div>
+    </div>
+    <div class="gallery-item" data-cat="taud" onclick="openLightbox(this)">
+      <img src="https://res.cloudinary.com/dfodljfu4/image/upload/q_auto/f_auto/v1779355820/IMG_2597_tkjsys.jpg" alt="Taud bleu marine voilier port">
+      <div class="gallery-overlay"><span class="gallery-label">Taud bleu marine</span></div>
+    </div>
+    <div class="gallery-item wide" data-cat="capote" onclick="openLightbox(this)">
+      <img src="https://res.cloudinary.com/dfodljfu4/image/upload/q_auto/f_auto/v1779355820/IMG_7888_zztn12.jpg" alt="Vue intérieure capote bateau blanc">
+      <div class="gallery-overlay"><span class="gallery-label">Capote – vue intérieure</span></div>
+    </div>
+    <div class="gallery-item" data-cat="sellerie" onclick="openLightbox(this)">
+      <img src="https://res.cloudinary.com/dfodljfu4/image/upload/q_auto/f_auto/v1779355820/IMG_4121_z10m8l.jpg" alt="Sellerie intérieure bateau cabine">
+      <div class="gallery-overlay"><span class="gallery-label">Sellerie intérieure</span></div>
+    </div>
+    <div class="gallery-item" data-cat="taud" onclick="openLightbox(this)">
+      <img src="https://res.cloudinary.com/dfodljfu4/image/upload/q_auto/f_auto/v1779355820/cd01fb49-1fea-47ca-a95e-fc43e4bdbb4c_cpc65y.jpg" alt="Taud noir bateau moteur atelier">
+      <div class="gallery-overlay"><span class="gallery-label">Taud noir sur mesure</span></div>
+    </div>
+    <div class="gallery-item" data-cat="bache" onclick="openLightbox(this)">
+      <img src="https://res.cloudinary.com/dfodljfu4/image/upload/q_auto/f_auto/v1779355820/IMG_2031_v8p9y2.jpg" alt="Bâche foodtruck camion rouge">
+      <div class="gallery-overlay"><span class="gallery-label">Bâche foodtruck</span></div>
+    </div>
+    <div class="gallery-item" data-cat="taud" onclick="openLightbox(this)">
+      <img src="https://res.cloudinary.com/dfodljfu4/image/upload/q_auto/f_auto/v1779355820/64b29576-250b-40fd-92e7-ce11fcc3712d_tknhkv.jpg" alt="Taud bleu ciel bateau moteur lac">
+      <div class="gallery-overlay"><span class="gallery-label">Taud bleu ciel</span></div>
+    </div>
+    <div class="gallery-item" data-cat="capote" onclick="openLightbox(this)">
+      <img src="https://res.cloudinary.com/dfodljfu4/image/upload/q_auto/f_auto/v1779355820/IMG_7896_spllhp.jpg" alt="Capote blanche Bénéteau port Léman">
+      <div class="gallery-overlay"><span class="gallery-label">Capote Bénéteau</span></div>
+    </div>
+    <div class="gallery-item" data-cat="bache" onclick="openLightbox(this)">
+      <img src="https://res.cloudinary.com/dfodljfu4/image/upload/q_auto/f_auto/v1779355820/IMG_4123_p14glb.jpg" alt="Bâche remorque bordeaux professionnelle">
+      <div class="gallery-overlay"><span class="gallery-label">Bâche remorque bordeaux</span></div>
+    </div>
+    <div class="gallery-item" data-cat="bache" onclick="openLightbox(this)">
+      <img src="https://res.cloudinary.com/dfodljfu4/image/upload/q_auto/f_auto/v1779355820/IMG_4125_plmekt.jpg" alt="Bâche commerce remorque blanche">
+      <div class="gallery-overlay"><span class="gallery-label">Bâche commerce</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <h2>Un projet similaire ?</h2>
+  <p>Contactez-nous pour un devis gratuit et personnalisé</p>
+  <a href="contact.html" class="btn-gold">Demander un devis</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Lémanic <span>Sellerie</span></div>
+  <ul class="footer-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="galerie.html">Réalisations</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 Lémanic Sellerie · Douvaine</p>
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close">✕</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  function filterGallery(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.style.display = (cat === 'all' || item.dataset.cat === cat) ? '' : 'none';
+    });
+  }
+  function openLightbox(el) {
+    document.getElementById('lightbox-img').src = el.querySelector('img').src;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>

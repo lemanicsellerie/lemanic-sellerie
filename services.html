@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nos Services – Lémanic Sellerie | Tauds, Capotes, Sellerie Marine</title>
+<link rel="canonical" href="https://lemanic-sellerie.vercel.app/services.html">
+<meta name="description" content="Lémanic Sellerie propose la fabrication sur mesure de tauds de bateau, capotes de voilier, sellerie marine, bâches de camion et réparation de stores à Douvaine, Haute-Savoie.">
+<meta property="og:title" content="Nos Services – Lémanic Sellerie">
+<meta property="og:description" content="Tauds de bateau, capotes de voilier, sellerie marine, bâches de camion et stores. Fabrication sur mesure à Douvaine.">
+<meta property="og:url" content="https://lemanic-sellerie.vercel.app/services.html">
+<meta property="og:image" content="https://res.cloudinary.com/dfodljfu4/image/upload/q_auto/f_auto/v1779355820/8387_jptt5i.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Lémanic Sellerie",
+    "address": {"@type": "PostalAddress", "streetAddress": "3 rue du Bois Arquet", "addressLocality": "Douvaine", "postalCode": "74140", "addressCountry": "FR"},
+    "telephone": "+33619424959"
+  },
+  "serviceType": ["Tauds de bateau", "Capotes de voilier", "Sellerie marine", "Bâches de camion", "Réparation de stores"],
+  "areaServed": "Région franco-suisse, Lac Léman"
+}
+</script>
+<style>
+  :root {
+    --navy: #1a2744; --navy-light: #243358;
+    --gold: #c9a96e; --gold-light: #e2c99a;
+    --cream: #faf7f2; --cream-dark: #f0ebe1;
+    --text: #2a2a2a; --text-light: #666;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 48px; background: rgba(26,39,68,.96); backdrop-filter: blur(8px);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .nav-logo svg { width: 38px; height: 38px; }
+  .nav-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; color: var(--cream); letter-spacing: .12em; line-height: 1.2; }
+  .nav-logo-text span { display: block; font-size: .72rem; color: var(--gold); letter-spacing: .22em; font-style: italic; font-weight: 300; }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a { color: rgba(250,247,242,.75); text-decoration: none; font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 400; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+  .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 9px 22px !important; font-weight: 500 !important; }
+
+  .page-hero {
+    background: var(--navy); padding: 160px 48px 80px;
+    text-align: center;
+  }
+  .page-hero p { font-size: .72rem; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; color: var(--cream); }
+  .page-hero h1 em { font-style: italic; color: var(--gold-light); }
+
+  .services-detail { padding: 80px 48px; }
+  .service-block {
+    display: grid; grid-template-columns: 1fr 2fr; gap: 60px;
+    align-items: start; padding: 60px 0;
+    border-bottom: 1px solid rgba(26,39,68,.1);
+  }
+  .service-block:last-child { border-bottom: none; }
+  .service-block-icon { font-size: 3rem; text-align: center; padding-top: 8px; }
+  .service-block-num {
+    font-family: 'Cormorant Garamond', serif; font-size: 5rem;
+    font-weight: 300; color: rgba(26,39,68,.06); line-height: 1;
+    margin-bottom: -20px;
+  }
+  .service-block-title {
+    font-family: 'Cormorant Garamond', serif; font-size: 2rem;
+    font-weight: 400; color: var(--navy); margin-bottom: 16px;
+  }
+  .service-block-desc { font-size: .92rem; color: var(--text-light); line-height: 1.85; font-weight: 300; margin-bottom: 20px; }
+  .service-block-list { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+  .service-block-list li {
+    background: var(--navy); color: var(--cream);
+    padding: 6px 16px; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+  }
+
+  .cta-section {
+    background: var(--navy); padding: 80px 48px; text-align: center;
+  }
+  .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; color: var(--cream); margin-bottom: 16px; }
+  .cta-section p { color: rgba(250,247,242,.6); margin-bottom: 32px; font-weight: 300; }
+  .btn-gold { background: var(--gold); color: var(--navy); padding: 14px 36px; font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; text-decoration: none; font-weight: 500; display: inline-block; transition: background .2s; }
+  .btn-gold:hover { background: var(--gold-light); }
+
+  footer { background: var(--navy); padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; color: var(--cream); }
+  .footer-logo span { color: var(--gold); }
+  .footer-links { display: flex; gap: 24px; list-style: none; }
+  .footer-links a { color: rgba(250,247,242,.45); text-decoration: none; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; transition: color .2s; }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy { font-size: .7rem; color: rgba(250,247,242,.3); }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s, transform .7s; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .page-hero { padding: 120px 24px 60px; }
+    .services-detail { padding: 48px 24px; }
+    .service-block { grid-template-columns: 1fr; gap: 24px; }
+    footer { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <svg viewBox="0 0 60 60" fill="none"><path d="M10 38 Q20 28 30 32 Q40 36 50 22" stroke="#c9a96e" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M48 18 L52 26 L44 24 Z" fill="#c9a96e"/><circle cx="32" cy="31" r="1.5" fill="#c9a96e"/></svg>
+    <div class="nav-logo-text">Lémanic Sellerie<span>Artisan sellier · Douvaine</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="galerie.html">Réalisations</a></li>
+    <li><a href="contact.html" class="nav-cta">Devis gratuit</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <p>Ce que nous faisons</p>
+  <h1>Nos <em>prestations</em></h1>
+</div>
+
+<div class="services-detail">
+
+  <div class="service-block reveal">
+    <div>
+      <div class="service-block-num">01</div>
+      <div class="service-block-icon">⛵</div>
+    </div>
+    <div>
+      <h2 class="service-block-title">Tauds de bateau</h2>
+      <p class="service-block-desc">
+        Nous fabriquons sur mesure tous types de tauds pour protéger votre embarcation sur le <a href="https://fr.wikipedia.org/wiki/Lac_L%C3%A9man" target="_blank" rel="noopener" style="color:var(--gold);">lac Léman</a> et au-delà. Chaque taud est conçu à partir de mesures précises prises directement sur votre bateau. Consultez notre <a href="galerie.html" style="color:var(--gold);">galerie de réalisations</a> pour voir des exemples concrets.
+      </p>
+      <ul class="service-block-list">
+        <li>Taud d'hiver</li><li>Taud d'été</li><li>Taud de camping</li><li>Taud de soleil</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="service-block reveal">
+    <div>
+      <div class="service-block-num">02</div>
+      <div class="service-block-icon">🛥️</div>
+    </div>
+    <div>
+      <h2 class="service-block-title">Sellerie intérieure marine</h2>
+      <p class="service-block-desc">
+        Rénovation complète ou partielle de votre sellerie marine. Nous intervenons sur tous types de bateaux à moteur et voiliers. Pour en savoir plus, <a href="contact.html" style="color:var(--gold);">contactez-nous</a> pour un devis personnalisé.
+      </p>
+      <ul class="service-block-list">
+        <li>Coussins</li><li>Panneaux de portes</li><li>Plage arrière</li><li>Banne de soleil</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="service-block reveal">
+    <div>
+      <div class="service-block-num">03</div>
+      <div class="service-block-icon">🌊</div>
+    </div>
+    <div>
+      <h2 class="service-block-title">Capotes & biminis</h2>
+      <p class="service-block-desc">
+        Fabrication sur mesure de capotes de voilier, biminis et lazy bags avec des matériaux haute résistance marine. Voir nos <a href="galerie.html" style="color:var(--gold);">exemples de capotes</a> réalisées sur le Léman.
+      </p>
+      <ul class="service-block-list">
+        <li>Capote voilier</li><li>Bimini</li><li>Lazy bag</li><li>Capote bateau moteur</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="service-block reveal">
+    <div>
+      <div class="service-block-num">04</div>
+      <div class="service-block-icon">🚛</div>
+    </div>
+    <div>
+      <h2 class="service-block-title">Bâches professionnelles</h2>
+      <p class="service-block-desc">
+        Fabrication de bâches sur mesure pour tous types de véhicules professionnels. <a href="contact.html" style="color:var(--gold);">Demandez votre devis gratuit</a> pour tout projet de bâchage.
+      </p>
+      <ul class="service-block-list">
+        <li>Bâche camion</li><li>Bâche foodtruck</li><li>Bâche remorque haute</li><li>Bâche remorque plate</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="service-block reveal">
+    <div>
+      <div class="service-block-num">05</div>
+      <div class="service-block-icon">🪑</div>
+    </div>
+    <div>
+      <h2 class="service-block-title">Sellerie générale</h2>
+      <p class="service-block-desc">
+        Réparation et réfection de tous types de sellerie terrestre. Voir nos <a href="galerie.html" style="color:var(--gold);">réalisations en sellerie</a>.
+      </p>
+      <ul class="service-block-list">
+        <li>Canapés</li><li>Sièges auto / moto</li><li>Chaises</li><li>Mobilier extérieur</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="service-block reveal">
+    <div>
+      <div class="service-block-num">06</div>
+      <div class="service-block-icon">🏠</div>
+    </div>
+    <div>
+      <h2 class="service-block-title">Stores</h2>
+      <p class="service-block-desc">
+        Installation, réparation et remplacement de toile de store. <a href="contact.html" style="color:var(--gold);">Contactez-nous</a> pour un diagnostic gratuit.
+      </p>
+      <ul class="service-block-list">
+        <li>Installation</li><li>Réparation</li><li>Remplacement de toile</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="cta-section">
+  <h2>Un projet en tête ?</h2>
+  <p>Devis gratuit et personnalisé sous 48h</p>
+  <a href="contact.html" class="btn-gold">Nous contacter</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Lémanic <span>Sellerie</span></div>
+  <ul class="footer-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="galerie.html">Réalisations</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 Lémanic Sellerie · Douvaine</p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => { if(e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i*100); obs.unobserve(e.target); } });
+  }, {threshold: 0.1});
+  reveals.forEach(r => obs.observe(r));
+</script>
+</body>
+</html>
